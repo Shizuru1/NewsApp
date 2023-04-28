@@ -1,20 +1,20 @@
 package com.example.newsapplication;
 
-import android.media.Image;
+import android.graphics.Bitmap;
 
 public class MyDataModel {
 
-    Image image;
+    int imageID;
     String name, preview;
 
-    public MyDataModel(Image image, String name, String preview) {
-        this.image = image;
+    public MyDataModel(int imageID, String name, String preview) {
+        this.imageID = imageID;
         this.name = name;
         this.preview = preview;
     }
 
-    public Image getImage() {
-        return image;
+    public int getImageID() {
+        return imageID;
     }
 
     public String getName() {
