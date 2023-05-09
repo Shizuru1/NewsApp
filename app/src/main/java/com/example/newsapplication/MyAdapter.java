@@ -1,6 +1,7 @@
 package com.example.newsapplication;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 FragmentManager fragmentManager = activity.getSupportFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, NewsFragment.class, null)
+                        .replace(R.id.frameLayout, NewsFragment.class, null)
                         .setReorderingAllowed(true)
                         .addToBackStack("name")
                         .commit();
