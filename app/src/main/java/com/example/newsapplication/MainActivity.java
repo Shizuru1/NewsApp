@@ -2,6 +2,7 @@ package com.example.newsapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,9 +19,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView mRecyclerView;
-    RecyclerView.LayoutManager layoutManager;
-    MyAdapter mAdapter;
+    RecyclerView mRecyclerView, tRecyclerView;
+    RecyclerView.LayoutManager layoutManager, tLayoutManager;
+    MyAdapter mAdapter, tAdapter;
     List<MyDataModel> list;
 
     @Override
@@ -34,11 +35,22 @@ public class MainActivity extends AppCompatActivity {
         list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
         list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
         list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
+        list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
+        list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
+        list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
+        list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
+        list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
 
         mRecyclerView = findViewById(R.id.RecyclerView);
-        mAdapter = new MyAdapter(this, list);
-        layoutManager = new LinearLayoutManager(this);
+        tRecyclerView = findViewById(R.id.RecyclerView3);
+        mAdapter = new MyAdapter(this, list.subList(3,list.size()));
         mRecyclerView.setAdapter(mAdapter);
+        tAdapter = new MyAdapter(this, list.subList(0,3));
+        tRecyclerView.setAdapter(tAdapter);
+//        layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        layoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
+        tLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
+        tRecyclerView.setLayoutManager(tLayoutManager);
     }
 }

@@ -22,10 +22,32 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text="TOP STORIES" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="NEWS" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
 
         </LinearLayout>
     </ScrollView>
