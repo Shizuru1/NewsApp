@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
@@ -21,9 +22,10 @@ public class NewsFragment extends Fragment {
 
     RecyclerView fRecyclerView;
     RecyclerView.LayoutManager fLayoutManager;
-    MyAdapter fAdapter;
+    MyHorizontalAdapter fAdapter;
     List<MyDataModel> list;
     ImageView image;
+    TextView title;
 
     public NewsFragment() {
     }
@@ -45,9 +47,11 @@ public class NewsFragment extends Fragment {
         list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
         list.add(new MyDataModel(R.drawable.ic_launcher_background, "Placeholder", "Lorem ipsum dolor sit amet"));
         image = view.findViewById(R.id.imageView2);
+        title = view.findViewById(R.id.textView5);
         image.setImageResource(R.drawable.ic_launcher_background);
+        title.setText("PLACEHOLDER TITLE");
         fRecyclerView = view.findViewById(R.id.RecyclerView2);
-        fAdapter = new MyAdapter(view.getContext(), list);
+        fAdapter = new MyHorizontalAdapter(view.getContext(), list);
         fLayoutManager = new LinearLayoutManager(view.getContext());
         fRecyclerView.setAdapter(fAdapter);
         fRecyclerView.setLayoutManager(fLayoutManager);

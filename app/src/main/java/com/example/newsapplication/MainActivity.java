@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView, tRecyclerView;
     RecyclerView.LayoutManager layoutManager, tLayoutManager;
-    MyAdapter mAdapter, tAdapter;
+    MyAdapter mAdapter;
+    MyTopAdapter tAdapter;
     List<MyDataModel> list;
 
     @Override
@@ -45,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
         tRecyclerView = findViewById(R.id.RecyclerView3);
         mAdapter = new MyAdapter(this, list.subList(3,list.size()));
         mRecyclerView.setAdapter(mAdapter);
-        tAdapter = new MyAdapter(this, list.subList(0,3));
+        tAdapter = new MyTopAdapter(this, list.subList(0,3));
         tRecyclerView.setAdapter(tAdapter);
-//        layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+//      layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         layoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
         tLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
